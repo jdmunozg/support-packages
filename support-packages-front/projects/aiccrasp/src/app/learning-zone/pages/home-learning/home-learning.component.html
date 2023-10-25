@@ -1,0 +1,120 @@
+<div class="home-learn">
+    <div class="title-home-learn">
+        <h1>The AICCRA Learning Zone</h1>
+    </div>
+
+    <div class="introduction-learn">
+        <p class="bold">Resources that help put climate-smart agriculture into practice in Africa</p>
+        <br>
+        <p>The <span class="bold">AICCRA Learning Zone</span> is a convenient one-stop shop for analytical resources - case studies, 
+            training guides, articles and videos - that empower farmers, policymakers and communities to make 
+            informed decisions in agriculture that work for people, nature and planet.</p>
+        <br>
+        <p>
+            These open-access resources are compiled to promote the broader and deeper adoption of climate 
+            information services and climate-smart technologies and practices across Africa. It is a curated database 
+            inspired by the approach used successfully by the CGIAR Research Program on Climate Change, 
+            Agriculture and Food Security (CCAFS). Visit the <a href="https://ccafs.cgiar.org/data-management-support-pack" target="_blank">CCAFS Data Management Support Pack</a>.
+        </p>
+        <br>
+        <p>
+            The learning zone aims to help select the resource that is most appropriate to your needs using 
+            a step-by-step filter in an easily accessible, single location for your convenience.
+        </p>
+        <br>
+        <p>
+            Collaboration across AICCRA teams means the tailored selection of readily available resources is 
+            gathered to meet the needs of AICCRA partners in all the six AICCRA focus countries and across 
+            the two regions where we work.
+        </p>
+    </div>
+
+    <div class="search-support">
+        <div class="filters-packs">
+            <div class="filter-title">
+                <h2>Filters:</h2>
+            </div>
+            <div class="filters">
+                <div class="card flex justify-content-center">
+                    <h4>Thematic area</h4>
+                    <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" [style]="{'width':'100%'}" auto optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Thematic area">
+                        <ng-template pTemplate="selectedItem">
+                            <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
+                                <div>{{ selectedCountry.name }}</div>
+                            </div>
+                        </ng-template>
+                       
+                    </p-dropdown>
+                </div>
+                <div class="card flex justify-content-center">
+                    <h4>Target user</h4>
+                    <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" [style]="{'width':'100%'}" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Target user">
+                        <ng-template pTemplate="selectedItem">
+                            <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
+                                <div>{{ selectedCountry.name }}</div>
+                            </div>
+                        </ng-template>
+                       
+                    </p-dropdown>
+                </div>
+                <div class="card flex justify-content-center">
+                    <h4>Project phase</h4>
+                    <p-dropdown [options]="countries" [(ngModel)]="selectedCountry" [style]="{'width':'100%'}" optionLabel="name" [filter]="true" filterBy="name" [showClear]="true" placeholder="Select a Project phase">
+                        <ng-template pTemplate="selectedItem">
+                            <div class="flex align-items-center gap-2" *ngIf="selectedCountry">
+                                <div>{{ selectedCountry.name }}</div>
+                            </div>
+                        </ng-template>
+                       
+                    </p-dropdown>
+                </div>
+            </div>
+        </div>
+        <div class="tools">
+            <div class="title-tools">
+                <h2>Tools</h2>
+            </div>
+
+            <div class="table-tool">
+                <div class="card">
+                    <p-table [value]="products" [(selection)]="selectedProducts" dataKey="code" [tableStyle]="{'min-width': '30rem'}">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th style="width: 4rem">
+                                    <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                                </th>
+                                <th>Name support packages</th>
+                                <th>Relevance</th>
+                                
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-product>
+                            <tr>
+                                <td>
+                                    <p-tableCheckbox [value]="product"></p-tableCheckbox>
+                                </td>
+                                
+                                <td> 
+                                    <p-accordion [activeIndex]="1">
+                                    <p-accordionTab header="{{product.name}}" styleClass="{'background':'white'}">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    </p>
+                                </p-accordionTab></p-accordion></td>
+                                <td>{{product.category}}</td>
+                                
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="finish-tool">
+            <button pButton type="button" label="Access to related resources" class="p-button-warning" [disabled]="this.selectedProducts.length == 0"></button>
+        </div>
+    </div>
+
+</div>

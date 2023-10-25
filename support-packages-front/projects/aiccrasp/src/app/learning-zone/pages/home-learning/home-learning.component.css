@@ -1,0 +1,59 @@
+.home-learn{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.title-home-learn{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.introduction-learn{
+
+    margin-top: 20px;
+    padding: 0 4em;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.search-support{
+    background-color: #F5F5F5;
+    margin: 1em 2em;
+    height: 100%;
+}
+
+.filters-packs{
+    padding: 1em 2em;
+
+}
+
+.filters-packs .filters{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 0;
+    width: 100%;
+
+}
+
+.tools{
+    padding: 1em 2em;
+}
+
+.finish-tool{
+    padding:0 2em;
+}
+
+.p-accordion .p-accordion-header .p-accordion-header-link {
+    padding: 1.25rem;
+    border: 0px solid #dee2e6 !important;
+    color: white !important;
+    background: white !important;
+    font-weight: 700;
+    border-radius: 6px;
+    transition: box-shadow 0.2s;
+  }
