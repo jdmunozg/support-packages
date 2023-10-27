@@ -42,4 +42,46 @@ export class SpSupportPackController {
   })
     }
   }
+
+  @Post('/createRequest')
+  async createRequestTool(@Res() response: Response, @Body() body:any) : Promise<any>{
+    try{
+      const result = await this.spSupportPackService.createRequestTool(body);
+      
+      
+      return response.status(200).json({
+        status: 'Ok!',
+        message: 'Successfully fetch data!',
+        result: result
+   })
+    }catch(err){
+      return response.status(500).json({
+        error: err,
+       status: 'Ok!',
+       message : 'Internal Server Error!'
+  })
+    }
+  }
+
+  @Get('/resquest')
+  async getAllrequest(@Req() request: Request, @Res() response: Response) : Promise<any>{
+    try{
+      const result = await this.spSupportPackService.getRequestPending();
+      console.log(result);
+      
+      return response.status(200).json({
+        status: 'Ok!',
+        message: 'Successfully fetch data!',
+        result: result
+   })
+    }catch(err){
+      console.log(err);
+      
+      return response.status(500).json({
+        error: err,
+       status: 'Ok!',
+       message : 'Internal Server Error!'
+  })
+    }
+  }
 }

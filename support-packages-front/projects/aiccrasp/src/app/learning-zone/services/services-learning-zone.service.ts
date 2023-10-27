@@ -26,6 +26,13 @@ export class ServicesLearningZoneService {
     return this.http.post<any>(`${this.urlApi}/support/create`,data).pipe();
   }
 
+  postRequestTool(data:any){
+    return this.http.post<any>(`${this.urlApi}/support/createRequest`,data).pipe();
+  }
+
+  getAllRequest(){
+    return this.http.get<any>(`${this.urlApi}/support/resquest`).pipe();
+  }
 }
 
 

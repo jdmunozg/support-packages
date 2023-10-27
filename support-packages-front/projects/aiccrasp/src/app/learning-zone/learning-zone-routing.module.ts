@@ -26,6 +26,11 @@ const routes: Routes = [
       path:'FAQ',
       loadChildren: () => import('./pages/faq/faq.module').then(mod => mod.FAQModule)
     },
+
+    {
+      path:'manage-tool',
+      loadChildren: () => import('./pages/admin/admin.module').then(mod => mod.AdminModule)
+    }
   ]
     
   }
