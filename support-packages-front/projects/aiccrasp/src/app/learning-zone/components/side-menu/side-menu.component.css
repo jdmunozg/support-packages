@@ -86,5 +86,13 @@
 }
 button{
     width: 240px;
+    background-color: #F2971F;
     
+}
+
+
+:host ::ng-deep .button-menu:hover{
+    background-color: #F2971F;
+    color: #ffff;
+    transition: 0.5s;
 }

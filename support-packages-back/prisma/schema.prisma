@@ -70,6 +70,8 @@ model sp_guidelines {
   contact String @db.VarChar(255)
   createdAt DateTime @db.DateTime()
   updatedAt DateTime @db.DateTime()
+  metadata sp_guidelines_metadata[]
+  resources sp_resources_guidelines[]
 }
 
 model sp_guidelines_metadata {
@@ -88,6 +90,7 @@ model sp_guidelines_metadata {
   limitations String @db.Text()
   is_tested_online String @db.Text()
   key_references String @db.Text()
+  guideline sp_guidelines? @relation(fields: [guideline_id], references: [id])
 }
 
 enum requests_status {
@@ -122,6 +125,7 @@ model sp_resources_guidelines {
   code String @db.VarChar(255)
   source String @db.VarChar(255)
   type String @db.VarChar(255)
+  guideline sp_guidelines? @relation(fields: [guideline_id], references: [id])
 }
 
 model sp_roles{
@@ -138,4 +142,11 @@ model sp_stages {
   apps sp_apps? @relation(fields: [app_id], references: [id])
   app_id Int @db.Int()
   description String @db.VarChar(255)
+}
+
+
+model sp_guide_download{
+  id Int @id @default(autoincrement())
+  guiade_id  Int @db.Int()
+  email String @db.Text()
 }

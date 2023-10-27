@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { AccordionModule } from 'primeng/accordion';
+import { InputTextModule } from 'primeng/inputtext';
 @NgModule({
   declarations: [
     HomeLearningComponent
@@ -19,7 +20,8 @@ import { AccordionModule } from 'primeng/accordion';
     FormsModule,
     TableModule,
     ButtonModule,
-    AccordionModule
+    AccordionModule,
+    InputTextModule
   ]
 })
 export class HomeLearningModule { }

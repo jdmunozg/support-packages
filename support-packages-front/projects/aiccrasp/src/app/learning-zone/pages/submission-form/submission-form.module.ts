@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SubmissionFormRoutingModule } from './submission-form-routing.module';
 import { SubmissionFormComponent } from './submission-form.component';
+import { ButtonModule } from 'primeng/button';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SubmissionFormComponent } from './submission-form.component';
   ],
   imports: [
     CommonModule,
-    SubmissionFormRoutingModule
+    SubmissionFormRoutingModule,
+    ButtonModule
   ]
 })
 export class SubmissionFormModule { }
