@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # Env files
-project/aiccrasp/enviroments/enviroment.ts
+project/aiccrasp/enviroments/*.ts
